@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-
 	struct Fecha{	
 		int d, m, a;
 	};
 	
 	struct Fecha f;
 	
+	
+int main() {
+
 	cout << "Te calculamos el dia siguiente de la fecha" << endl;
 	cout << "----------" << endl;
 	cout << "Escribe con espacios dia  mes  ano" << endl;
