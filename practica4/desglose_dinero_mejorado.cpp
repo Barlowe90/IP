@@ -1,21 +1,29 @@
 #include <iostream>
-
 using namespace std;
 
 /*
  * LEXICO
 	cantidad, resto, quinientos, cien, cincuenta, veinte, diez, cinco: entero;
-	desglose: (dato diviendo, divisor: real; resultado cociente, resto; real;
-	LEXICO
-		
+	desglose: (dato dividiendo, divisor, resultado cociente, resultado resto: entero;)
 	ALGORITMO
-	
+		cociente <- dividiendo / divisor;
+		resto <- dividiendo MOD divisor;
 	FIN;
 ALGORITMO
 	Leer(cantidad);
-	
+	desglose(cantidad, quinientos);
+	desglose(cantidad, cien);
+	desglose(cantidad, cincuenta);
+	desglose(cantidad, veinte);
+	desglose(cantidad, diez);
+	desglose(cantidad, cinco);
 FIN
 * */
+
+void desglose(int dividiendo, int divisor, int &cociente, int &resto){
+	cociente = dividiendo / divisor;
+	resto = dividiendo % divisor;	
+}
 
 int main() {
 
@@ -24,24 +32,12 @@ int main() {
 	cout << "Cantidad total ";
 	cin >> cantidad;
 	
-	quinientos = cantidad / 500;
-	resto = cantidad % 500;
-	
-	cien = resto / 100;
-	resto = resto % 100; 
-	
-	cincuenta = resto / 50;
-	resto = resto % 50;
-	
-	veinte = resto / 20;
-	resto = resto % 20;
-	
-	diez = resto / 10;
-	resto = resto % 10;
-	
-	cinco = resto / 5;
-	resto = resto % 5;
-	
+	desglose(cantidad, 500, quinientos, resto);
+	desglose(resto, 100, cien, resto);
+	desglose(resto, 50, cincuenta, resto);
+	desglose(resto, 20, veinte, resto);
+	desglose(resto, 10, diez, resto);
+	desglose(resto, 5, cinco, resto);
 	
 	cout << quinientos << " de quinientos euros" << endl
 	 << cien << " de cien euros" << endl
@@ -52,5 +48,4 @@ int main() {
 	 << resto << " monedas" << endl;
 	
 	return 0;
-	
 }
