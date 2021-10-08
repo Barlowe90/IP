@@ -11,12 +11,12 @@ using namespace std;
 	FIN;
 ALGORITMO
 	Leer(cantidad);
-	desglose(cantidad, quinientos);
-	desglose(cantidad, cien);
-	desglose(cantidad, cincuenta);
-	desglose(cantidad, veinte);
-	desglose(cantidad, diez);
-	desglose(cantidad, cinco);
+	desglose(cantidad, 500, quinientos, resto);
+	desglose(resto, 100, cien, resto);
+	desglose(resto, 50, cincuenta, resto);
+	desglose(resto, 20, veinte, resto);
+	desglose(resto, 10, diez, resto);
+	desglose(resto, 5, cinco, resto);
 FIN
 * */
 
