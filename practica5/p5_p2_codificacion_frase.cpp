@@ -2,42 +2,42 @@
 using namespace std;
 
 //LEXICO
-	//frase: caracter;
+	//c: caracter;
 //ALGORITMO
-	//Leer(frase);
+	//Leer(c);
 	//REPETIR
-		//SEGUN frase
+		//SEGUN c
 			//Z: Escribir(A)
 			//z: Escribir(a)
 			//9: Escribir(0)
 			//c: Escribir(siguiente_letra)
 			//EN_OTRO_CASO: Escribir(*)
 		//FIN_SEGUN
-	//HASTA_QUE frase=\n
+	//HASTA_QUE c=\n
 //FIN
 
 
 int main(){
 	
-	char frase;
+	char c;
 
+	cin.get(c);
+	
 	do{		
-		cin.get(frase);
-
-		if(frase=='Z'){
+		if(c=='Z'){
 			cout << 'A';
-		}else if(frase=='z'){
+		}else if(c=='z'){
 			cout << 'a';
-		}else if(frase=='9'){
+		}else if(c=='9'){
 			cout << '0';
-		}else if(frase=='(' || frase==')' || frase==' '){
+		}else if(c=='(' || c==')' || c==' '){
 			cout << '*';
 		}else{
-			(int)frase++;
-			cout << (char)frase;
+			(int)c++;
+			cout << (char)c;
 		}
-
-	}while(frase!='\n');
-		
+		cin.get(c);
+	}while(c!='\n');
+				
 	return 0;
 }
