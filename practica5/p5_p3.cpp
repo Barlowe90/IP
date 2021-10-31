@@ -15,22 +15,22 @@ using namespace std;
 
 int main()
 {
-    int num1, num2;
+    int dvd, dvs;
     float c, r;
 
-    cout << "dividiendo y divisor: " << endl;
-    cin >> num1 >> num2;
+    cout << "Dividiendo y divisor: " << endl;
+    cin >> dvd >> dvs;
 
-    r = num1;
+    r = dvd;
     c = 0;
 
-    while (r >= 0 && num2 > 0)
+    while (r >= dvs)
     {
-        r = r - num2;
+        r = r - dvs;
         c++;
     }
 
-    cout << "El cociente es: " << c << "Y el resto es: " << r;
+    cout << "El cociente es: " << c << " Y el resto es: " << r;
 
     return 0;
 }
