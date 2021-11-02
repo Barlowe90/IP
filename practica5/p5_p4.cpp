@@ -13,10 +13,9 @@
 	//actual <- 3;
 	//RECORRER (i=0; i<=n; i++)
 		//nuevo <- 3*actual - 2*antepenul;
-		//n <- nuevo;
-		//actual <- nuevo;
-		//ultimo <- actual;
 		//antepenul <- ultimo;
+		//ultimo <- actual;
+		//actual <- nuevo;
 	//FIN_RECORRER
 	//Escribir(n);
 	
