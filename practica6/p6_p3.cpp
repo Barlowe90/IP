@@ -1,36 +1,64 @@
 //LEXICO
 	//MarcaFin: constante entero;
 	//secuencia_S: secuencia enteros;
-	//secuencia_T: secuencia enteros;
-	//actual, siguiente, suma :entero;
+	//suma: entero;
 //ALGORITMO
 	//Comenzar(s);
-	//actual <- EA(S);
-	//suma <- actual;
-	
-	//MIENTRAS EA(S) != MarcaFin HACER
-		//Escribir(suma);
-		//siguiente <- Avanzar(S);
-		//suma <- suma + siguiente;
+	//suma <- EA(S);
+	//Escribir(suma);
+	//ITERAR
 		//Avanzar(S);
-	//FIN_MIENTRAS
+	//DETENER EA(S) = MarcaFin;
+		// suma <- suma + EA(S);
+	//FIN_ITERAR
+	//Escribir(suma);
 
 #include <iostream>
+#include <fstream>
+#include <string>
 #include <list>
 using namespace std;
 
+void Cargar_Fichero (list<int> &S, string nombre) {
+	ifstream f;
+	int dato;
+	f.open (nombre);
+
+	if (!f) {
+		cout << "Error abriendo el fichero de datos" << endl;
+	}else {
+		while (f >> dato) { // mientras la lectura sea exitosa
+			S.push_back (dato); // Registrar (S, dato)
+		}
+		f.close();
+	}
+}
+
 int main(){
 	
-	const MARCA_FIN_LINEA = '\n';
-	list <int> S, T;
-	list <int> ::iterator EA_S;
-	int actual, suma, siguiente;
+	list <int> S;
+	list <int>::iterator EA;
+	int suma;
+
+	Cargar_Fichero(S, "datosP5_2.txt");
 	
-	while(){
+	EA = S.begin();
+	
+	suma = *EA;		
+	cout << suma << ", ";
+	
+	do{
+		EA++;
+		cout << "Avanza. ";
+		if(EA == S.end())
+			break;
+			cout << "aqui no entra";
+			suma = suma + *EA;
+			cout << suma << ", ";
+		cout << "sale?";
+	}while(true);
+	
+	cout << "Salio.";
 		
-		
-	}
-	
-	
 	return 0;
 }
