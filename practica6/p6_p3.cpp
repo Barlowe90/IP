@@ -14,25 +14,9 @@
 	//Escribir(suma);
 
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <list>
 using namespace std;
-
-void Cargar_Fichero (list<int> &S, string nombre) {
-	ifstream f;
-	int dato;
-	f.open (nombre);
-
-	if (!f) {
-		cout << "Error abriendo el fichero de datos" << endl;
-	}else {
-		while (f >> dato) { // mientras la lectura sea exitosa
-			S.push_back (dato); // Registrar (S, dato)
-		}
-		f.close();
-	}
-}
 
 int main(){
 	
@@ -40,7 +24,7 @@ int main(){
 	list <int>::iterator EA;
 	int suma;
 
-	Cargar_Fichero(S, "datosP5_2.txt");
+	S = {1, 4, 5, 3, 5, 6};
 	
 	EA = S.begin();
 	
@@ -49,16 +33,11 @@ int main(){
 	
 	do{
 		EA++;
-		cout << "Avanza. ";
 		if(EA == S.end())
 			break;
-			cout << "aqui no entra";
 			suma = suma + *EA;
 			cout << suma << ", ";
-		cout << "sale?";
 	}while(true);
-	
-	cout << "Salio.";
-		
+			
 	return 0;
 }
