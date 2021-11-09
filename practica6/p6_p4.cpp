@@ -6,7 +6,7 @@
 //ALGORITMO
 //	Comenzar(S1);
 //	Comenzar(S2);
-//  MIENTRAS(S1 O S2 != MarcaFin)
+//  MIENTRAS(S1 Y S2 != MarcaFin)
 //		SI S1==S2 ENTONCES
 //			Registrar(R, EA_S1);
 //			Avanzar(EA_S1);
@@ -35,7 +35,7 @@ int main(){
 		EA_S1 = S1.begin();
 		EA_S2 = S2.begin();
 		 
-		while(EA_S1 != S1.end() || EA_S2 != S2.end()){
+		while(EA_S1 != S1.end() && EA_S2 != S2.end()){
 			if(*EA_S1 == *EA_S2){
 				R.push_back(*EA_S1);
 				EA_S1++;
