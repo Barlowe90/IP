@@ -54,8 +54,9 @@
 	//FIN_MIENTRAS
 
 #include <iostream>
-#include <list>
 #include <string>
+#include <list>
+
 using namespace std;
 
 struct Marcador{
@@ -76,7 +77,7 @@ Marcador nuevoMarcador(Marcador m, int jugador){
 				m.punto2 = 0;
 			}else{
 				m.punto1++;
-			}
+			}			}
 			break;
 		case 2:
 			if(m.punto1 == 3 && m.punto2 == 3){
@@ -96,27 +97,31 @@ Marcador nuevoMarcador(Marcador m, int jugador){
 	return m;
 }
 
-void escribirMarcador(int punto){
+string escribirMarcador(int punto){
+	string texto;
+	
 	switch(punto){
 		case 0:
-			cout << "nada";
+			texto = "nada";
 			break;
 		case 1:
-			cout << "quince";
+			texto = "quince";
 			break;
 		case 2:
-			cout << "treinta";
+			texto = "treinta";
 			break;
 		case 3:
-			cout << "cuarenta";
+			texto = "cuarenta";
 			break;
 		case 4:
-			cout << "ventaja";
+			texto = "ventaja";
 			break;
 		case 5:
-			cout << "juego";
+			texto = "juego";
 			break;		
 	}
+	
+	return texto;
 }		
 		
 int main(){
@@ -135,9 +140,7 @@ int main(){
 	while(EA_S != S.end()){
 		nuevoMarcador(m, *EA_S);
 //		cout << m.punto1 << " - " << m.punto2 << endl;
-		escribirMarcador(m.punto1);
-		escribirMarcador(m.punto2);
-		cout << endl;
+		cout << escribirMarcador(m.punto1) << ", " << escribirMarcador(m.punto2) << endl;
 		EA_S++;
 	}
 	

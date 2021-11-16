@@ -1,0 +1,3 @@
+// LEXICO
+	// n: constante;
+// ALGORITMO
