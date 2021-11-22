@@ -77,7 +77,7 @@ Marcador nuevoMarcador(Marcador m, int jugador){
 				m.punto2 = 0;
 			}else{
 				m.punto1++;
-			}			}
+			}			
 			break;
 		case 2:
 			if(m.punto1 == 3 && m.punto2 == 3){
