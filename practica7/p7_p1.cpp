@@ -1,6 +1,6 @@
 // Problema de recorrido
-// Hay que tratar la secuencia vacía y hay que tratar el primer elemento
-// Al finalizar la iteracion tenemos que realizar los calculos que nos pide el enunciado
+// Hay que tratar la secuencia vacía y no hay que tratar el primer elemento
+// Al finalizar la iteracion tenemos que mostrar el total de cada peso
 //
 // LEXICO
 	// S: secuencia de Real;
@@ -41,8 +41,7 @@ int main(){
 	list<double> S;
 	list<double>:: iterator EA_S;
 	
-	S = {40.5, 44.9, 53.6, 60.3, 71.2, 58.6, 62.5, 71.7};
-//	S = {};
+	S = {40.5, 44.9, 53.6, 60.3, 71.2, 58.6, 62.5, 71.7, 39};
 	
 	EA_S = S.begin();
 	
