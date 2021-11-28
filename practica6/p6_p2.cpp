@@ -1,57 +1,58 @@
+//~ LEXICO
+	//~ S, T: secuencia de Entero;
+	//~ suma: Entero;
+//~ ALGORITMO
+	//~ Comenzar(S);
+	//~ Segun (EA(S))
+		//~ EA(S) = MarcaFin:
+			//~ Escribir("vacio");
+		//~ EA(S) != MarcaFin:
+			//~ suma <- EA(S);
+			//~ Registrar(T, suma);
+			//~ ITERAR
+				//~ Avansar(S);
+			//~ DETENER EA(S) = MarcaFin;
+				//~ suma <- suma + EA(S);
+				//~ Registrar(T, suma);
+			//~ FIN_ITERAR
+	//~ FIN_SEGUN
+//~ FIN
+
 #include <iostream>
-#include <fstream>
 #include <list>
-#include <string>
+
 using namespace std;
-
-const char MARCA_FIN_LINEA = '\n';
-
-void Cargar_Fichero (list<char> &S, string nombre) {
-	ifstream f;
-	string cadena;
-	int i;
-
-	f.open (nombre);
-	
-	if (!f) {
-		cout << "Error abriendo el fichero de datos" << endl;
-	}
-	
-	else {
-		S.clear(); // Borra el contenido previo de la lista
-		
-		while (getline(f, cadena)) {
-			for (i=0; i<cadena.length(); i++) {
-				S.push_back (cadena[i]);
-			}
-			S.push_back (MARCA_FIN_LINEA);
-		}
-	}
-	
-	f.close();
-}
 
 int main(){
 	
-	list<char> S;
-	list<char>::iterator EA_S;
-	int cont;
+	list<int> S, T;
+	list<int>::iterator EA_S, EA_T;
+	int suma;
 	
-	Cargar_Fichero(S,"datosP5_2.txt");
-
-	/* Primer esquema de recorrido del 
-	 * primer modelo de acceso secuencial*/
+	S = {1, 4, 5, 3, 5, 6};
 
 	EA_S = S.begin();
-	cont = 0;
 	
-	while (EA_S != S.end()) {
-		cout << *EA_S << ", ";
-		cont = cont + 1;
-		EA_S++;
+	if(EA_S == S.end()){
+		cout << "vacia";
+	}else if(EA_S != S.end()){
+		suma = *EA_S;
+		T.push_back(suma);
+		do{
+			EA_S++;
+		if(EA_S == S.end()) 
+			break;
+			suma = suma + *EA_S;
+			T.push_back(suma);
+		}while(true);
 	}
 	
-	cout << endl << "El número de datos recogidos es: " << cont << endl;
+	EA_T = T.begin();
 	
+	while(EA_T != T.end()){
+		cout << *EA_T << ", ";
+		EA_T++;
+	}
+
 	return 0;
 }
