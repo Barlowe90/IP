@@ -59,12 +59,12 @@
 
 using namespace std;
 
-struct Marcador{
+struct marcador{
 	int punto1;
 	int punto2;
 };
 			
-Marcador nuevoMarcador(Marcador m, int jugador){
+marcador nuevoMarcador(marcador m, int jugador){
 	switch(jugador){
 		case 1:
 			if(m.punto1 == 3 && m.punto2 == 3){
@@ -129,7 +129,7 @@ int main(){
 	list<int> S;
 	list<int>::iterator EA_S;
 	
-	Marcador m;
+	marcador m;
 	
 	S = {1,1,2,2,1,1,2,2,1};
 	
