@@ -1,29 +1,26 @@
 // Problema de recorrido
-// Esquema 3 al no poder tratar la secuencia como al resto y no tratar al primero como al resto
+// Esquema 1, proque ni necesitamos tratar el primer elemento ni la secuencia vacia diferente al resto
 // La postcondicón es que el EA no sea la MarcaFin. El invariante es la suma
-// 
-
+	
 // LEXICO
 //		S, R: secuencia de entero;
-//		suma, ultimo, penultimo: entero;
+//		suma, ultimo: entero;
 // ALGORITMO
 //		Comenzar(S);
 // SEGUN EA (S) 
-	//		EA (S) = MarcaFin O Avanzar (S) = MarcaFin 
+	//		EA (S) = MarcaFin 
 	//			Escribir("Secuencia vacia");
-	//		EA (S) != MarcaFin Y Avanzar (S) != MarcaFin
-	
-	//			ultimo <-  EA(S);
-	//			penultimo <- 0;	
+	//		EA (S) != MarcaFin 
+	//			ultimo <- EA(S);	
+	//			Avanzar (S);
+	//			SI (EA(S)=MarcaFin) ENTONCES Escribir("vacia");		
 	//			ITERAR
 	//				Avanzar (S);
-	//			DETENER EA(S) == MarcaFin
-	//				penultimo <- ultimo;
-	//				ultimo <- EA(S);
-	//				suma <- ultimo + penultimo;
+	//			DETENER EA(S) == MarcaFin;
+	//				suma <- ultimo + EA(S);
 	//				Registrar(R, suma);
+	//				ultimo <- EA(S);
 	//			FIN_ITERAR;
-		
 	//			MIENTRAS EA (R) != MarcaFin ENTONCES
 	//				Escribir(EA (R)); Avanzar (R);
 	//			FIN_MIENTRAS
@@ -40,8 +37,8 @@ int main(){
 	list<int> S, R;
 	list<int>:: iterator EA_S, EA_R;
 	
-	S = {1, 2, 3, 4, 5, 6};
-	R = {};
+	//~ S = {1, 2, 3, 4, 5, 6};
+	S = {1};
 	
 	EA_S = S.begin();
 	
@@ -56,8 +53,9 @@ int main(){
 			suma = ultimo + *EA_S;
 			R.push_back(suma);
 			ultimo = *EA_S;
-		}while(true);
-	
+		}while(true);	
+		
+		// mostrar la lista resultado
 		EA_R = R.begin();
 		
 		while(EA_R != R.end()){
