@@ -20,6 +20,7 @@
 	//				SI EA (S) < 40 ENTONCES menos40 <- menos40 + 1;
 	//				SINO EA (S) > 40 Y EA (S) < 50 ENTONCES entre40y50 <- entre40y50 + 1;
 	//				SINO EA (S) > 50 ENTONES mas50 <- mas50 + 1;
+	//				Avanzar (S)
 	//			HASTA EA (S) != MarcaFin
 	//			mediaPeso = sumaPeso / cont;
 	//			Escribir(mediaPeso);
