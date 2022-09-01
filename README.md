@@ -1,7 +1,7 @@
-# Introducción a la programación
+# Introduction to programming
 
-- Grado: Ingeniería Informática
-- Año: primero
-- Cuatrimestre: primero
+- Degree: Computer Science
+- year: first
+- Semester: first
 
-Ejercicios resueltos vistos en las clases de prácticas
+Solver exercises seen in the practice classes
